@@ -4,10 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 public class AppleCalculator {
     public String getTimeout() throws InterruptedException {
-        for (int value = 0; value < 10; value++) {
-            System.out.println("AppleCalculator.getTimeout iteration:- " + value);
-            TimeUnit.SECONDS.sleep(1);
-        }
+        System.out.println("AppleCalculator.getTimeout ThreadId:- " + Thread.currentThread().getId() + " ThreadName:- " + Thread.currentThread().getName());
+        TimeUnit.SECONDS.sleep(1);
         return "apple";
     }
 }

@@ -5,16 +5,15 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.util.function.Supplier;
 
-import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 public class AppleCalculatorTest {
     @Test
-    void assertTimeoutTest() {
+    void assertTimeoutPreemptivelyTest() {
         AppleCalculator appleCalculator = new AppleCalculator();
-        assertTimeout(Duration.ofSeconds(5), () -> appleCalculator.getTimeout());
-        assertTimeout(Duration.ofSeconds(5), () -> appleCalculator.getTimeout(), "time out");
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> appleCalculator.getTimeout());
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> appleCalculator.getTimeout(), "oops time out");
         Supplier<String> messageSupplier = () -> "oops time out";
-        assertTimeout(Duration.ofSeconds(5), () -> appleCalculator.getTimeout(), messageSupplier);
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> appleCalculator.getTimeout(), messageSupplier);
     }
 }
