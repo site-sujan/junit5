@@ -11,11 +11,5 @@ repositories {
 
 dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter:5.6.2')
-}
-
-test {
-    useJUnitPlatform{
-        includeTags 'add'
-        excludeTags 'sub'
-    }
+    testCompile 'org.junit-pioneer:junit-pioneer:0.6.0'
 }

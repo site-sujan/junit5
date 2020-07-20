@@ -1,0 +1,16 @@
+package com.example.junit5.sujan;
+
+import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.ReportEntry;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class AppleCalculatorTest {
+    @Test
+    @ReportEntry(" this test case is to assert Apple Calculator addition functionality ")
+    @ReportEntry(" 1 apple + 1 apple is 2 apple ")
+    void addApple() {
+        AppleCalculator appleCalculator = new AppleCalculator();
+        assertEquals(2, appleCalculator.addApple(1, 1), " 1 apple + 1 apple is 2 apple ");
+    }
+}
